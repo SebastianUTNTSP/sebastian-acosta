@@ -33,7 +33,7 @@ class Singleton {
     public static Connection getDatabaseConnection(){
         try{
             
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/myproject?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root","globant123");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/myproject?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root","");
 
         }catch (Exception e){
             e.printStackTrace();
