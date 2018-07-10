@@ -3,28 +3,35 @@ package fol.AbstractFactory;
 public class DbFactory extends Abstractfactory {
     @Override
     Connection getConnection(String type) {
-        if(type != "oracle" || type !="mssql") {
+        try {
             if (type.equalsIgnoreCase("oracle")) {
                 return new OracleDB();
             }
             if (type.equalsIgnoreCase("mssql")) {
                 return new Mssql();
             }
+        } catch (IllegalArgumentException e){
+
+            e.printStackTrace();
+
         }
-        return null;
+    throw new IllegalArgumentException("That connection is not available");
 
     }
 
     @Override
     Servers getServer(String type) {
-        if(type != "Mssql" || type !="OracleDB") {
+        try {
             if (type.equalsIgnoreCase("Mssql")) {
                 return new MssqlServer();
             }
             if (type.equalsIgnoreCase("OracleDB")) {
                 return new OracleServer();
             }
+        } catch (Exception e){
+            e.printStackTrace();
+
         }
-                return null;
+        throw new IllegalArgumentException("That connection is not available");
     }
 }

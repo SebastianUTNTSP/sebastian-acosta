@@ -2,14 +2,17 @@ package fol.AbstractFactory;
 
 public class FactoryProducer {
     public static Abstractfactory getFactory(String type) {
-        if(type != "connection" || type !="server") {
+        try {
             if (type.equalsIgnoreCase("connection")) {
                 return new DbFactory();
             }
             if (type.equalsIgnoreCase("server")) {
                 return new DbFactory();
             }
+        } catch (Exception e){
+
+            e.printStackTrace();
         }
-        return null;
+            throw new IllegalArgumentException("That Factory Doesnt Exist");
     }
 }
