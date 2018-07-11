@@ -1,9 +1,6 @@
-package Builder;
-
+package topic0.Exercise4.Builder;
 public class DemoBuilder {
         public static void main(String[] args){
-
-
             //BuildingUsers
             Address ad = new Address.Builder().houseNumber(400)
                                               .city("Resistencia")
@@ -16,10 +13,5 @@ public class DemoBuilder {
                                             .id(1)
                                             .pass("******")
                                             .build();
-
-
-
-
-
         }
 }

@@ -1,11 +1,10 @@
-package Builder;
+package topic0.Exercise4.Builder;
 
 public class Address {
     private final int houseNumber;
     private final String city;
     private final int zipcode;
     private final String street;
-
 
     private Address(Builder build) {
         this.houseNumber = build.houseNumber;

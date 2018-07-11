@@ -1,9 +1,7 @@
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 
 public class Service {
-    public  ArrayList<Files> recentFiles = new ArrayList<Files>();
+    public  ArrayList<File> recentFiles = new ArrayList<File>();
 
 
 
@@ -14,16 +12,15 @@ public class Service {
 
 
 
-    public void addRecentList(Files file) {
+    public void addRecentList(File file) {
 
         if (recentFiles.size() < 15 || recentFiles.contains(file)) {
 
             if (recentFiles.isEmpty()) {
                 recentFiles.add(file);
             } else if (recentFiles.contains(file)) {
-                int swap = recentFiles.indexOf(file);
-                recentFiles.set(swap, recentFiles.get(0));
-                recentFiles.set(0, file);
+                recentFiles.remove(file);
+                recentFiles.add(0,file);
             } else
                 recentFiles.add(file);
         } else  {
@@ -35,13 +32,13 @@ public class Service {
 
     public void printList(){
 
-        for(Files e: recentFiles){
+        for(File e: recentFiles){
             System.out.println(e.getName());
         }
     }
 
 
-    public ArrayList<Files> getRecentFiles() {
+    public ArrayList<File> getRecentFiles() {
         return recentFiles;
     }
     public int getSize() {
@@ -51,7 +48,7 @@ public class Service {
         return recentFiles.isEmpty();
     }
 
-    public void setRecentFiles(ArrayList<Files> recentFiles) {
+    public void setRecentFiles(ArrayList<File> recentFiles) {
         recentFiles = recentFiles;
     }
 }

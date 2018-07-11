@@ -2,8 +2,8 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class FilesTest {
-    Files newfiles = new Files("test.txt","testing like a champ","C://ProgramFiles//Files//test.txt");
+class FileTest {
+    File newfiles = new File("test.txt","testing like a champ","C://ProgramFiles//File//test.txt");
     @Test
     void openFile() {
         newfiles.openFile();
@@ -19,7 +19,7 @@ class FilesTest {
 
 
     @Test
-    void getName(){
+    void verifyFileName(){
         assertEquals("test.txt",newfiles.getName());
     }
 }

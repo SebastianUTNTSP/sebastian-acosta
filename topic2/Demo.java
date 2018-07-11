@@ -2,11 +2,11 @@ public class Demo {
         public static void main(String[] args){
 
 
-                Files file1 = new Files("Color.txt","Aca estan la paletas de colores","C://ProgramFiles//Files/Color.txt");
-                Files file2 = new Files("Textura.txt","Aca estan todos las texturas","C://ProgramFiles//Files/Textura.txt");
-                Files file3 = new Files("Premio.txt","You won!","C://ProgramFiles//Files/Premio.txt");
-                Files file4 = new Files("Computer.txt","Computer Requirements","C://ProgramFiles//Files/Computer.txt");
-                Files file5 = new Files("Log.txt","Log","C://ProgramFiles//Files//Log.txt");
+                File file1 = new File("Color.txt","Aca estan la paletas de colores","C://ProgramFiles//File/Color.txt");
+                File file2 = new File("Textura.txt","Aca estan todos las texturas","C://ProgramFiles//File/Textura.txt");
+                File file3 = new File("Premio.txt","You won!","C://ProgramFiles//File/Premio.txt");
+                File file4 = new File("Computer.txt","Computer Requirements","C://ProgramFiles//File/Computer.txt");
+                File file5 = new File("Log.txt","Log","C://ProgramFiles//File//Log.txt");
 
                 Service list = new Service();
 

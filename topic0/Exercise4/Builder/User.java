@@ -1,5 +1,4 @@
-package Builder;
-
+package topic0.Exercise4.Builder;
 public class User {
 
     private final String name;

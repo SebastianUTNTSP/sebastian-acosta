@@ -1,4 +1,4 @@
-public class Files {
+public class File {
     private String name;
     private String text;
     private String path;
@@ -7,7 +7,7 @@ public class Files {
 
 
 
-    public Files(String name, String text, String path) {
+    public File(String name, String text, String path) {
         this.name = name;
         this.text = text;
         this.path = path;

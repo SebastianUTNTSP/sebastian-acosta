@@ -1,30 +1,37 @@
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class ServiceTest {
-    private Service newservice = new Service();
-    Files file5 = new Files("Log.txt","Log","C://ProgramFiles//Files//Log.txt");
-    Files file6 = new Files("Headphones.txt","Headphones models","C://ProgramFiles//Files/Headphones.txt");
-    Files file7 = new Files("Support.txt","JUST DONT GIVE UP","C://ProgramFiles//Files/Support.txt");
+
+    private Service newservice;
+    File file5;
+    File file6;
+    File file7;
 
 
-    @Test
-    void getRecentFiles() {
+    @BeforeEach
+    void setUp() {
+        newservice = new Service();
+        file5 = new File("Log.txt","Log","C://ProgramFiles//File//Log.txt");
+         file6 = new File("Headphones.txt","Headphones models","C://ProgramFiles//File/Headphones.txt");
+         file7 = new File("Support.txt","JUST DONT GIVE UP","C://ProgramFiles//File/Support.txt");
     }
 
     @Test
-    void getSizeWithNoFiles() {
+    void listShouldInitializedEmpty() {
 
         assertEquals(0,newservice.getSize());
     }
     @Test
-    void getSizeWithFiles() {
+    void whenServiceCallAddSizeShouldReturnNotEmpty() {
         newservice.addRecentList(file5);
         assertEquals(1,newservice.getSize());
+        assertFalse(newservice.empty());
     }
     @Test
-    void getSizeWithSameFiles() {
+    void repeatingFilesCheckingSize() {
         newservice.addRecentList(file5);
         newservice.addRecentList(file6);
         newservice.addRecentList(file7);
