@@ -3,15 +3,15 @@ public class DemoBuilder {
         public static void main(String[] args){
             //BuildingUsers
             Address ad = new Address.Builder().houseNumber(400)
-                                              .city("Resistencia")
-                                              .zipcode(3500)
-                                              .street("Araza")
+                                              .giveCity("Resistencia")
+                                              .giceZipcode(3500)
+                                              .giveStreet("Araza")
                                               .build();
             User user1 = new User.Builder() .address(ad)
-                                            .name("Sebastian")
-                                            .email("qwert@gmail.com")
-                                            .id(1)
-                                            .pass("******")
+                                            .giveName("Sebastian")
+                                            .giveEmail("qwert@gmail.com")
+                                            .giveId(1)
+                                            .givePass("******")
                                             .build();
         }
 }
