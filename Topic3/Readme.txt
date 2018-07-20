@@ -72,4 +72,18 @@ closeCarro(int id){
 // if id doesnt match or the productlist its 0(its empty) it returns a responeEntity.notFound
 }
 
+carroController
+In the following text I'll be presenting all the mapping to url for each method
+
+METHOD GET
+@RequestMapping ("/api/carros") getCarrosList()
+" " " " " " " "	("/api/carros/{id}") getCarrito()
+" " " " " " " "	("/api/carros/{id}/productlist") getProductList()
+" " " " " " " "	("/api/carros/{id}/purchase") closeCarro()
+METHOD POST
+@RequestMapping	("/api/carros") createCarro()
+" " " " " " " "	("/api/carros/{id}/productlist") addProduct()	
+METHOD DELETE
+@RequestMapping	("/api/carros")	deleteCarro()
+" " " " " " " "	("/api/carros/{id}/productlist") deleteProduct()
 

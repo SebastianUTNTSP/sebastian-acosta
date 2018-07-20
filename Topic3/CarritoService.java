@@ -9,7 +9,7 @@ import java.util.List;
 
 @Service public class CarritoService {
 
-	private List<Carro> cartList = new ArrayList<>(Arrays.asList(new Carro()));
+	private List<Carro> cartList = new ArrayList<>(Arrays.asList());
 
 	public List<Carro> getCarrosList() {
 		return cartList;
@@ -59,17 +59,21 @@ import java.util.List;
 
 	public ResponseEntity getProductlist(int id) {
 		Carro c;
-		for (int i = 0; i < cartList.size(); i++) {
-			c = cartList.get(i);
-			if (c.getId() == id) {
+		c = getCarro(id);
 
-				return ResponseEntity.ok(c.getProductlist());
-			}
+		if (c.getId() == id) {
+
+			return ResponseEntity.ok(c.getProductlist());
 		}
+
 		return ResponseEntity.notFound().build();
 	}
 
 	public ResponseEntity closeCarro(int id) {
+		return purchasingCart(id);
+	}
+
+	private ResponseEntity purchasingCart(int id) {
 		for (int i = 0; i < cartList.size(); i++) {
 			Carro c = cartList.get(i);
 			if (c.getId() == id && c.getProductlist().size() != 0) {
